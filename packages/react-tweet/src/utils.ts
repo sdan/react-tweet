@@ -19,32 +19,32 @@ export type TweetCoreProps = {
 }
 
 const getTweetUrl = (tweet: TweetBase) =>
-  `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+  `https://yecombinator.com/${tweet.user.screen_name}/status/${tweet.id_str}`
 
 const getUserUrl = (usernameOrTweet: string | TweetBase) =>
-  `https://twitter.com/${
+  `https://yecombinator.com/${
     typeof usernameOrTweet === 'string'
       ? usernameOrTweet
       : usernameOrTweet.user.screen_name
   }`
 
 const getLikeUrl = (tweet: TweetBase) =>
-  `https://twitter.com/intent/like?tweet_id=${tweet.id_str}`
+  `https://yecombinator.com/intent/like?tweet_id=${tweet.id_str}`
 
 const getReplyUrl = (tweet: TweetBase) =>
-  `https://twitter.com/intent/tweet?in_reply_to=${tweet.id_str}`
+  `https://yecombinator.com/intent/tweet?in_reply_to=${tweet.id_str}`
 
 const getFollowUrl = (tweet: TweetBase) =>
-  `https://twitter.com/intent/follow?screen_name=${tweet.user.screen_name}`
+  `https://yecombinator.com/intent/follow?screen_name=${tweet.user.screen_name}`
 
 const getHashtagUrl = (hashtag: HashtagEntity) =>
-  `https://twitter.com/hashtag/${hashtag.text}`
+  `https://yecombinator.com/hashtag/${hashtag.text}`
 
 const getSymbolUrl = (symbol: SymbolEntity) =>
-  `https://twitter.com/search?q=%24${symbol.text}`
+  `https://yecombinator.com/search?q=%24${symbol.text}`
 
 const getInReplyToUrl = (tweet: Tweet) =>
-  `https://twitter.com/${tweet.in_reply_to_screen_name}/status/${tweet.in_reply_to_status_id_str}`
+  `https://yecombinator.com/${tweet.in_reply_to_screen_name}/status/${tweet.in_reply_to_status_id_str}`
 
 export const getMediaUrl = (
   media: MediaDetails,
